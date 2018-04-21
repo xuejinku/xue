@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background:#000000;
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+    }
+</style>
+<body style="height: 2000px;">
+<p>薛金库</p>
+<p>薛金库</p>
+<a href="javascript:;" id="btn"><div></div></a>
+<script>
+    var ku = document.getElementById('btn');
+    ku.onclick = function () {
+        window.scrollTo(0,0);
+
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var aa = setInterval(function(){
+            scrollTop -= 20;
+            window.scrollTo(0,scrollTop);
+            if(scrollTop<=0){
+                clearInterval(aa);
+            }
+        },20);
+    }
+</script>
+</body>
+</html>

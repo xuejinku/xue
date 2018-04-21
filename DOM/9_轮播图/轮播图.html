@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #container{
+        width: 750px;
+        height: 291px;
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    #img-box{
+        width: 3750px;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #img-box a{
+        float: left;
+    }
+    ul{
+        list-style: none;
+    }
+    #btn-list{
+        right: 10px;
+        bottom: 10px;
+        position: absolute;
+    }
+    #btn-list li,#arrow span{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        float: left;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 12px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    #btn-list li.list{
+        background: orangered;
+    }
+     #arrow{
+        position: absolute;
+        left:10px;
+        bottom:10px;
+    }
+</style>
+<body>
+    <div id="container">
+        <div id="img-box">
+            <a href="#"><img src="img/1.jpg" alt=""></a>
+            <a href="#"><img src="img/2.jpg" alt=""></a>
+            <a href="#"><img src="img/3.jpg" alt=""></a>
+            <a href="#"><img src="img/4.jpg" alt=""></a>
+            <a href="#"><img src="img/5.jpg" alt=""></a>
+        </div>
+        <ul id="btn-list">
+            <li class="list">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div id="arrow">
+            <span id="up">&lt</span>
+            <span id="next">&gt</span>
+        </div>
+    </div>
+<script>
+    var oContainer = document.getElementById('container')
+    var oBtnList = document.getElementById('btn-list');
+    var oBtn = oBtnList.getElementsByTagName('li');
+    var oImgBox = document.getElementById('img-box');
+    var oNext = document.getElementById('next');
+    var oup = document.getElementById('up');
+    var count = 0;
+    var timer;
+
+    for(var i=0;i<oBtn.length;i++){
+        oBtn[i].index = i;
+        oBtn[i].onclick = function () {
+
+            change(this.index);
+            count = this.index;
+            }
+    }
+        oNext.onclick = function () {
+            count++;
+            if(count == oBtn.length){
+                count = 0;
+            }
+            change(count);
+        };
+        oup.onclick = function () {
+        count--;
+        if(count == -1){
+            count = oBtn.length-1;
+        }
+        change(count);
+    };
+    function change(xue) {
+        for(var j=0;j<oBtn.length;j++){
+            oBtn[j].className = '';
+        }
+        oBtn[xue].className = 'list';
+        oImgBox.style.left = -xue * 750+'px';
+    }
+    run();
+    oContainer.onmousemove = function () {
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function () {
+        run();
+    }
+    function run() {
+        timer = setInterval(function () {
+            oNext.onclick();
+        },2000);
+    }
+</script>
+</body>
+</html>

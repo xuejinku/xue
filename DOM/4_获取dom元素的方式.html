@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+  /*  window.onload = function () {
+        console.log('load...');
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function (){
+            console.log('嘿嘿');
+        }
+    };
+*/
+</script>
+<body>
+    <div id="div1">薛金库</div>
+    <div id="div2">金库</div>
+    <div id="div3">库</div>
+    <ul>
+        <li class="cc aa bb">薛金库</li>
+        <li >薛金库</li>
+        <li class="bb">薛金库</li>
+    </ul>
+    <script>
+       /* console.log('1111111');
+        var oDiv1 = document.getElementById('div1')
+        console.log(oDiv1);*/
+
+       function getEleByClass(clsName) {
+           var result = [];
+           var aEle = document.getElementsByTagName('*');
+           for(var i=0;i<aEle.length;i++){
+               //"bb aa cc" == "aa"
+               var str = aEle[i].className;
+               var arr = str.split('');
+               for(var j=0;j<arr.length;j++){
+                   if(arr[j] == clsName){
+                       result.push(aEle[i]);
+                   }
+               }
+              /* if(aEle[i].className == clsName){
+                   result.push(aEle[i]);
+               }*/
+           }
+           return result;
+       }
+       var aA = getEleByClass('aa');
+
+        for(var i=0;i<aA.length;i++){
+            aA[i].style.background = 'red';
+        }
+    </script>
+</body>
+</html>

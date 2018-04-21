@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //6.4 编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+    // 它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+    // 例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。
+    /* function CollectDigits(str){
+         var result = '';
+         for(var i=0;i<str.length;i++){
+             var subStr = str.charAt(i);
+             if(subStr >=0 && subStr <=9){
+                 result +=subStr;
+             }
+         }
+         return result;
+     }
+        document.write(CollectDigits('sd1fg2t3u4s5ar6'));
+*/
+
+
+
+ // 6.5 编制一个将两个字符串交叉合并的函数Merge(s1,s2)，例如Merge("123","abc"）的返回结果是"1a2b3c"，
+ // 如果两个字符串的长度不同，那么就将多余部分直接合并到结果字符串的末尾，
+ // 如Merge("123456",''abc''）的返回结果是”1a2b3c456”。
+/*
+    function merge(s1,s2) {
+        var result = '';
+        var maxlenght = Math.max(s1.length,s2.length);
+        for(var i=0;i<maxlenght;i++){
+            if(i<s1.length){
+                result += s1.charAt(i);
+            }
+            if(i<s2.length){
+                result += s2.charAt(i);
+            }
+        }
+        return result;
+    }
+    console.log(merge('abcd','123456'));
+    document.write(merge('abcd','123456'));
+*/
+
+
+    //6.6设计一个程序，它（使用一个数组）接收 用户输入的7门课程的成绩，
+    // 然后在页面上显示其总成绩和平均分，并列出小于60的成绩。
+
+/*
+    var arr = [];
+    var sum = 0;
+    for(var i=1;i<=7;i++){
+        var num = prompt( '请输入第+"i"+门成绩','');
+        if(!num){
+            break;
+        }
+        num = Number(num);
+        arr.push(num);
+        sum +=num;
+    }
+    document.write('总成绩'+sum+"<br/> 平局分是："+sum/7);
+
+    console.log(arr);
+*/
+
+
+
+
+
+    //6.8 设计一个函数DayOfYear(d)，它接必一个日期参数d，返回一个该日期是所在年份的第几天，
+    // 如DayOfYear(2000,2,8)的返回值是39.
+    //（提示：①定义一个数组months=new Array（31,28,31,30,31,30,31,31,30,31，30,31）记录每个月少天：
+    // ②定义一个辅助函数IsLeapYear(y)判定某个年份是否闰年，以确定2月份的天数是28还是29。）
+   /* function DayOfYear(year,month,day){
+        var months = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+        var days = 0;
+        if(year%4 == 0 && year%100 != 0 || year%400 == 0){
+            months[1] = 29;
+        }
+        for(var i=1;i<month;i++){
+            days += months[i-1];
+        }
+        days += day;
+        return days;
+    }
+    document.write(DayOfYear(2018,4,18));*/
+</script>
+</body>
+</html>

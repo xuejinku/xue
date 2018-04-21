@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="点击事件.css/">
+
+</head>
+<body>
+    <div class="div1">
+        <div id="top" class="top">
+            <span class="top1">111</span>
+            <span class="top2">222</span>
+            <span class="top3">333</span>
+        </div>
+        <div id="bottom" class="bottom">
+            <div class="bottom-1">aaa</div>
+            <div >bbb</div>
+            <div >ccc</div>
+        </div>
+    </div>
+    <script>
+        /*定义变量 没有赋值
+        * 函数参数和眉没有传
+        * obj.school访问对象没有属性
+        * arr[10] 访问数组中没有的下标
+        * */
+        var otop = document.getElementById('top');
+        var xue = otop.getElementsByTagName('span');
+        var oottom = document.getElementById('bottom');
+        var jin = obottom.getElementsByTagName('div');
+
+        for(var i=0; i<xue.length;i++){
+            xue[i].index = i;
+            xue[i].onclick = function () {
+               /* console.log(111)；*/
+               for(var j=0;j<xue.length;j++){
+                   xue[j].className = '';
+                   jin[j].className = '';
+               }
+               //对当前对象的引用
+               this.className = 'top1';
+                //点击的按钮的index
+                var index = this.index;
+                //找到和按钮对应的div  让当前的div显示
+                jin[index].className = 'bottom-1'
+            }
+        }
+    </script>
+</body>
+</html>

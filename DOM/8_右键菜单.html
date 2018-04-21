@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+   ul{
+       border: 1px solid #999;
+       width: 120px;
+       /*border-radius: 10px;*/
+       list-style: none;
+       display: none;
+       position:absolute;
+}
+    li{
+        color: #555;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        text-align: center;
+    }
+    li:hover{
+        background: cornflowerblue;
+        color: #ffffff;
+    }
+</style>
+<body>
+<ul id="ul1">
+    <li >加</li>
+    <li >减</li>
+    <li >乘</li>
+    <li >除</li>
+</ul>
+<script>
+    var xue = document.getElementById('ul1');
+    document.oncontextmenu = function (e) {
+        xue.style.display = 'block';
+
+        var left = e.clientX;
+        var top = e.clientY;
+
+        xue.style.left = left+'px';
+        xue.style.top = top+'px';
+        //阻止默认行为
+        return false;
+    };
+    var jin = document.getElementsByTagName('li');
+    for(var i=0;i<jin.length;i++){
+        jin[i].onclick = function () {
+            console.log(this.innerHTML);//innerHTML取出标签中的内容
+            xue.style.display = "none";
+        }
+    }
+   /* document.onclick = function () {
+        xue.style.display = 'none';
+    }*/
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+    -webkit-font-smoothing: antialiased;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.wrapper{
+    width: 1230px;
+    margin:0 auto;
+}
+
+/*nav开始*/
+    .nav{
+        height: 33px;
+        background: #ccc;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .nav-box,.nav-menu{
+        height: 32px;
+        line-height: 32px;
+        color: #999;
+    }
+    .nav-login{
+        float: left;
+    }
+    .nav-login a{
+        padding: 0 10px 0 10px;
+        color: #999;
+    }
+    .nav-login a:hover{
+        color: #FF0036;
+    }
+    .nav-login .login-btn{
+        padding-left: 20px;
+    }
+    .nav-login a,.nav-login span{
+        float: left;
+    }
+    .nav-menu{
+        float: right;
+    }
+    .nav-menu>li{
+        float: left;
+    }
+    .nav-link{
+        color: #999999;
+        display: block;
+        padding: 0 14px 0 10px;
+    }
+    .sn-menu{
+        position: relative;
+    }
+    .sn-menu:hover{
+         background: #fff;
+         height: 33px;
+     }
+    .sn-menu:hover .sub-sn-menu{
+        display: block;
+    }
+    .sn-menu a:hover{
+        color: #FF0036;
+        text-decoration: underline;
+    }
+    .sn-menu:hover::after{
+        transform: rotate(180deg);
+        /*top:13px;*/
+    }
+    .sn-menu::after{
+        content: '';
+        width: 0;
+        height: 0;
+        border-width:3px;
+        border-style: solid;
+        border-color: #999 transparent transparent transparent;
+        position: absolute;
+        right: 6px;
+        top: 16px;
+        transition:all 0.1s linear ;
+        transform-origin: 3px 1.5px;
+    }
+    .sub-sn-menu{
+        background: #fff;
+        border:1px solid #eee;
+        border-top:none;
+        padding: 10px 8px;
+        position: absolute;
+        left:-1px;
+        top:33px;
+        width: 74px;
+        display: none;
+        /*height: 300px;*/
+        background: #fff;
+        z-index:1;
+    }
+    .sub-menu-item{
+        line-height: 18px;
+        height: 18px;
+    }
+    .sub-menu-item a{
+        color: #999;
+    }
+    .nav-icon{
+        color: #ff0036;
+        font-size: 14px;
+    }
+
+
+
+
+/*nav结束*/
