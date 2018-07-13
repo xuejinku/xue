@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .blue{
+            width: 200px;
+            height: 200px;
+            border: 10px solid blue;
+            border-radius: 50%;  /* border-radius: 50%*/
+        }
+        .blue::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            border: 10px solid blue;
+            border-radius: 50%;
+            z-index: 1;
+            position: absolute;
+            left:0;
+            top:0;
+            border-bottom-color: transparent;
+        }
+        .red{
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            border-radius: 50%;
+            position: absolute;
+            left: 230px;
+            top:0;
+        }
+        .red::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            border-radius: 50%;
+            position: absolute;
+            left:-10px;
+            top:-10px;
+            z-index: 1;
+            border-left-color: transparent;
+        }
+
+        .green{
+
+            width: 200px;
+            height: 200px;
+            border: 10px solid green;
+            border-radius: 50%;
+            position: absolute;
+            left: 460px;
+            top:0;
+        }
+        .green::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            border: 10px solid green;
+            border-radius:50%;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            z-index:1;
+            border-left-color: transparent;
+        }
+        .black{
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            border-radius: 50%;
+            position: absolute;
+            left: 110px;
+            top:110px;
+        }
+        .black::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            border:10px solid black;;
+            border-radius: 50%;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+        }
+        .yellow{
+            width: 200px;
+            height: 200px;
+            border: 10px solid yellow;
+            border-radius: 110px;
+            position: absolute;
+            top:110px;
+            left:340px;
+        }
+        .yellow::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            border: 10px solid yellow;
+            border-radius: 50%;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            z-index: 1;
+            border-top-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="black"></div>
+    <div class="yellow"></div>
+</body>
+</html>

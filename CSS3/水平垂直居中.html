@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .red{
+            width: 500px;
+            height: 500px;
+            background: red;-
+            display: -webkit-flex;
+            /*子元素水平对齐*/
+            -webkit-justify-content: center;
+            /*子元素垂直的对齐*/
+            -webkit-align-items: center;
+        }
+        .blue{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="red">
+    <div class="blue"></div>
+</div>
+</body>
+</html>
