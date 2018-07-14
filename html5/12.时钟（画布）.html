@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="600"></canvas>
+
+    <script>
+       // 画第一个圆
+        var oCanvas1 = document.querySelector('#canvas1');
+        var oCt = oCanvas1.getContext('2d');
+
+     /*   画刻度+圆
+        弧度 =角度*Math.PI/180*/
+     for (var i=0;i<60;i++){
+         oCt.moveTo(300,300);
+         oCt.arc(300,300,100,i*6*Math.PI/180,(i+1)*6*Math.PI/180,false)
+     }
+      oCt.stroke();
+       //盖 画第一个圆
+       oCt.beginPath();
+       oCt.arc(300,300,95,0,2*Math.PI,false);//0*6*Math.PI/180,360*Math.PI/180,false
+       oCt.fillStyle = '#fff';
+       oCt.fill();
+
+
+       /*
+       oCtx.stroke();
+       oCtx.closePath();*/
+
+
+
+
+       //盖 画第二个圆
+       //画时针刻度
+        oCt.beginPath();
+        for(var j=0;j<12;j++){
+            oCt.moveTo(300,300);
+            oCt.arc(300,300,100,j*30*Math.PI/180,j*30*Math.PI/180,false);
+        }
+        oCt.stroke();
+
+       //盖 画第二个圆
+        oCt.beginPath();
+        oCt.arc(300,300,90,0,2*Math.PI,false);
+        oCt.fillStyle = '#fff';
+        oCt.fill();
+
+
+        //画 秒针
+
+
+        //画 分针
+
+
+        //画 时针
+
+        //取当前时间
+        /*var oDate = Date*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+        overflow: hidden;
+    }
+    #xue{
+        width: 200px;
+        height: 200px;
+        margin: 50px 70px;
+    }
+    li{
+        float: left;
+        margin-right: 5px;
+        width: 40px;
+        height: 20px;
+        border: 1px solid ;
+        text-align: center;
+        line-height: 20px;
+        background:  #F1F1F1;
+        border-bottom: none;
+        cursor: pointer;
+    }
+    li.active{
+        background: #6D84B4;
+        color: #fff;
+    }
+    .jin{
+        height: 100px;
+        border: 1px solid #898989;
+        font-size: 16px;
+    }
+    .jin div{
+        display: none;
+    }
+    .jin .active{
+        display: block;
+    }
+</style>
+<body>
+    <div id="xue">
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div class="jin">
+            <div class="active">a</div>
+            <div>b</div>
+            <div>c</div>
+        </div>
+    </div>
+    <script src="../jquery-1.12.4.js"></script>
+<script>
+    $('li').on('click',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        //$('.content div').eq($(this).index()).addClass('active').siblings().removeClass();
+        $('.jin div').eq($(this).index()).show().siblings().hide();
+    })
+</script>
+</body>
+</html>

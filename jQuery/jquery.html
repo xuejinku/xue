@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /*window.onload = function () {
+        document.getElementById('xue');
+    };*/
+    $(document).ready(function () {//文档就绪函数
+        document.getElementById('jin');
+    });
+    /*$(function () {   //简写（同上面一样）
+        document.getElementById('jin')
+    })*/
+    window.onload = function () {
+        console.log(555)
+    };
+    window.onload = function () {//这种写法会让下面的把上面的覆盖了
+        console.log(444)
+    };
+
+    $(document).ready(function () {
+        console.log(222)
+    });
+    $(function () {
+        console.log(333);
+    })
+</script>
+<body>
+    <div id="xue">000</div>
+    <div id="jin">111</div>
+</body>
+</html>
