@@ -15,7 +15,7 @@
             padding: 0;
         }
         #div1{
-            display: none;
+
         }
         #div1 img{
             width: 25%;
@@ -32,6 +32,7 @@
             top:0;
             background: #000 url("img/1.jpg") center center no-repeat;
             background-size:contain;
+            display: none;
         }
     </style>
 </head>
@@ -39,11 +40,40 @@
     <div id="div1"></div>
     <div id="big-img"></div>
     <script>
+    /*    var oDiv2 = document.getElementById('big-img');*/
         var html = '';
+        var oNow = 0;
         for(var i=0;i<24;i++){
             html += '<img src="img/thumbs/' + (i + 1) + '.jpg"/>';
         }
         $('#div1').append(html);
+
+        $('#div1 img').on('tap',function (e) {
+            var $index = $(this).index()+1;
+           $('#big-img').show().css('background-image','url("img/'+$index+'.jpg")');
+           /*$('#div1').hide();*/
+           oNow = $index;
+           e.preventDefault();
+        });
+        $('#big-img').on('tap',function (e) {
+            $('#big-img').hide();
+            e.preventDefault();
+        }).on('swipeleft',function () {
+            oNow++;
+            if(oNow>=25){
+                oNow = 1;
+            }
+            $('#big-img').css('background-image','url("img/'+oNow +'.jpg")');
+        }).on('swiperight',function () {
+            oNow--;
+            if(oNow<=0){
+                oNow = 24;
+            }
+            $('#big-img').css('background-image','url("img/'+oNow +'.jpg")')
+        });
+
+
+
     </script>
 </body>
 </html>

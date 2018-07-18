@@ -1,0 +1,29 @@
+.dialog-mask{
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.4);
+}
+.dialog-box{
+    background: #FFFFFF;
+    width: 300px;
+    height: 200px;
+    position:absolute;
+    left: 50%;
+    top:50%;
+    -webkit-transform:translate(-50%,-50%);
+}
+.dialog-close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: #0000ff;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}

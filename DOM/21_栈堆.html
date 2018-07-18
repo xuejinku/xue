@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    person1 = {
+        name: 'xue',
+        age: 24,
+        father:{
+            name:'jin'
+        }
+    };
+    function clone(obj) { //浅克隆
+        var obj1 = {};
+        for(key in obj){
+           if (obj[key] instanceof Object){ //深克隆
+               obj1[key] = clone(obj[key]);
+           }else {
+               obj1[key] = obj[key];
+           }
+    }
+        return obj1;
+    }
+    var person2 = clone(person1);
+    person1.father.name = 'ku';  //深克隆不能影响对象属性
+    console.log(person2.father.name);
+</script>
+</body>
+</html>

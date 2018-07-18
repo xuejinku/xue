@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+body{
+    height: 100%;
+}
+#home{
+    overflow: hidden;
+    height: 100%;
+}
+#nav{
+    width: 30%;
+    height: 100%;
+    position: fixed;
+}
+#title{
+    overflow: hidden;
+    padding: 24px;
+    display: flex;
+}
+.title-logo img{
+    width: 36px;
+    height: 36px;
+}
+.title-logo,.title-list{
+    float: left;
+}
+.title-list{
+    flex: 1;
+}
+.title-list li{
+    float: left;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+.title-menu{
+    float: right;
+}
+#text{
+
+}
+.text-all{
+    margin: 0 auto;
+    padding: 0 24px 0 84px;
+    vertical-align: middle;
+}
+.text-top{
+    margin-bottom: 24px;
+    font-size: 150% ;
+    font-weight: 800;
+}
+#content{
+    width: 70%;
+    float: right;
+}
+.img1920{
+    width: 100%;
+}
+.img640{
+    display: none;
+}
+#content-1{
+    height: 240px;
+    background: #E4E4E4;
+}
+#content-11{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.list1{
+    float: left;
+    margin: 20px;
+}
+.list-1{
+    width: 300px;
+}
+.list2{
+    float: left;
+    margin: 20px;
+}
+.list-2{
+    width: 300px;
+}
+.list3{
+    float: left;
+    margin: 20px;
+}
+.list-3{
+    width: 300px;
+}

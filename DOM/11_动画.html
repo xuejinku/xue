@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+            left:0;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+
+    </div>
+
+
+<script src="9_轮播图/jslib.js"></script>
+<script>
+    /*
+     * oDiv.style.width 只能取到内联样式的属性
+     * */
+    var oDiv = document.getElementById('div1');
+    oDiv.onclick = function(){
+        animate(oDiv,{
+            width:800,
+            left:200
+        },function(){
+            alert('ok');
+        });
+    };
+
+
+
+    /*oDiv.onmouseover = function(){
+        //            oDiv.style.width = '800px';
+        //            console.log(oDiv.style.width);
+        //            console.log(oDiv.offsetWidth);
+
+        if(oDiv.offsetWidth < 800) {
+            var timer = setInterval(function () {
+                oDiv.style.width = oDiv.offsetWidth + 20 + "px";
+                if (oDiv.offsetWidth >= 800) {
+                    clearInterval(timer);
+                }
+            }, 30);
+        }
+    };*/
+
+
+    //        oDiv.offsetHeight
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #xue{
+        float: left;
+    }
+    #xue img{
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+    #ku{
+        width: 200px;
+        height: 200px;
+        background:rgba(255,255,255,0.4);
+        position: absolute;
+        left:0;
+        top:0;
+        display: none;
+    }
+    #jin
+    {
+        width: 400px;
+        height: 400px;
+        background: url("9_轮播图/img/6.jpg") 0 0 no-repeat;
+        float: left;
+        display: none;
+        position: relative;
+        overflow: hidden;
+    }
+    #jin1{
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        left: 0;
+        top: 0;
+    }
+</style>
+<body>
+    <div id="xue">
+        <img src="9_轮播图/img/6.jpg" id="" alt=""/>
+        <div id="ku"></div>
+    </div>
+    <div id="jin">
+        <img src="9_轮播图/img/6.jpg" id="jin1" alt="">
+    </div>
+</body>
+<script>
+    var oXue = document.getElementById('xue');
+    var oKu = document.getElementById('ku');
+    var oJin = document.getElementById('jin');
+    var oJin1 = document.getElementById('jin1');
+    oXue.onmouseover = function () {
+        oKu.style.display = 'block';
+        oJin.style.display = 'block';
+    };
+    oXue.onmousemove = function (e) {
+        e = e || window.event;
+      var left = e.clientX - oKu.offsetWidth/2;
+      var top = e.clientY - oKu.offsetHeight/2;
+      if(left<=0){
+          left = 0;
+      }
+      if(top<=0){
+            top = 0;
+        }
+      var maxX = oXue.offsetWidth - oKu.offsetWidth;
+      var maxY = oXue.offsetHeight - oKu.offsetHeight;
+      if(left>=maxX){
+          left = maxX;
+      }
+      if(top>=maxY){
+          top = maxY;
+      }
+      oKu.style.left = left + 'px';
+      oKu.style.top = top + 'px';
+
+      var xscale = left/maxX;
+      var yscale = top/maxY;
+
+      var bigMaxX = oJin.offsetWidth - oJin1.offsetWidth;
+      var bigMaxY = oJin.offsetHeight - oJin1.offsetHeight;
+
+      var bleft = bigMaxX*xscale;
+      var btop = bigMaxY*yscale;
+
+      oJin1.style.left = bleft + 'px';
+      oJin1.style.top = btop + 'px';
+    };
+    oXue.onmouseout = function () {
+        oKu.style.display = 'none';
+        oJin.style.display = 'none';
+    }
+</script>
+</html>

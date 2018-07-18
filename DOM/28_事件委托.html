@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button id="btn">点击</button>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+</ul>
+<script>
+    var oLi = document.getElementsByTagName('li');
+    var oUl = document.getElementsByTagName('ul')[0];
+    var oBtn = document.getElementById('btn');
+
+    /*for(var i=0;i<oLi.length;i++){
+        oLi[i].onclick = function () {
+            console.log(this.innerHTML)
+        }
+    }*/
+    oUl.onclick = function (e) {
+        e = e || window.event;
+        var target = e.target || e.srcElement;
+
+        if(target.tagName == 'LI'){
+            console.log(target.innerHTML);
+        }
+    };
+
+    oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oUl.appendChild(oLi);
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #xue{
+        width: 200px;
+        height: 200px;
+        background: #00ff00;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+</style>
+<body>
+    <div id="xue"></div>
+</body>
+<script>
+    var oDiv = document.getElementById('xue');
+    oDiv.onmousedown = function (e) {
+        var disX = e.clientX - oDiv.offsetLeft;
+        var disY = e.clientY - oDiv.offsetTop;
+        document.onmousemove = function (e) {
+
+            oDiv.style.left = e.clientX - disX + "px";
+            oDiv.style.top = e.clientY - disY + "px";
+        };
+        oDiv.onmouseup = function (e) {
+            document.onmousemove = null;
+        }
+    }
+</script>
+</html>

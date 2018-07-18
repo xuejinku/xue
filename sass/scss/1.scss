@@ -1,0 +1,24 @@
+$color:#f00;
+body{
+  width: 10px;
+}
+.head{
+  background:$color;
+  width: 200px;
+  height: 200px;
+}
+.header-logo{
+  width: 100px;
+}
+.head{
+  width: 500px;
+  margin: 0 auto;
+  .logo{
+    width: 10px;
+    height: 10px;
+    float: left;
+    a{
+      text-decoration: none;
+    }
+  }
+}

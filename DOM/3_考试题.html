@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //1.
+     function mySort() {
+     var tags = new Array();//使用数组作为参数存储容器
+     for(var i = 0;i < arguments.length;i++) {
+     tags.push(arguments[i]);
+     }
+     tags.sort(function sortNumber(a,b){return a - b});
+     return tags;//返回已经排序的数组
+     }
+     var result = mySort(50,11,16,32,24,99,57,100);//传入参数个数不确定
+     console.log(result);//显示结果
+
+    // 2.
+   /* var a;
+    alert(a);
+    alert(typeof a);
+    var c = null;
+    alert(typeof c);
+    alert(a==c);
+    alert(a===c);*/
+  // 3.
+   /* for(var i=1;i<=3;i++){
+        setTimeout(function(){
+            console.log(i);
+        },0);
+    }*/
+    //4.
+    var a,b;
+    (function(){
+
+        console.log(a);
+        console.log(b);
+        var a=b=3;
+        console.log(a);
+        console.log(b);
+    })();
+    console.log(a);
+    console.log(b);
+</script>
+</body>
+</html>

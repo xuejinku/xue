@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul{
+    list-style: none;
+    }
+</style>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    var oLi = document.getElementsByTagName('li');
+
+    for(var i=0;i<oLi.length;i++){
+        (function (idx) {  //函数立即调用
+            oLi[idx].onclick = function () {
+                console.log(idx);
+            }
+        })(i)
+    }
+</script>
+</body>
+</html>

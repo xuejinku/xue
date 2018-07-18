@@ -1,0 +1,37 @@
+ @mixin boder{
+   border:2px solid #ff0;
+   box-shadow: 0 0 3px 4px rgba(0,0,0,0.5);
+}
+ .aa{
+   width: 200px;
+   height: 200px;
+   @include boder();
+ }
+ .bb{
+   width: 100px;
+   height: 100px;
+   @include boder();
+ }
+  @mixin row{
+    border-style: solid;
+    border-width: 10px;
+    border-color: blue transparent transparent transparent;
+    width: 0;
+    height: 0;
+  }
+ .row{
+   @include row();
+ }
+.cc{
+  width: 6px/3px;
+}
+
+ $j:5;
+
+ @while($j<2){
+    .a#{$j}{
+
+   width: 20*$j;
+  }
+   $j:$j+2;
+ }

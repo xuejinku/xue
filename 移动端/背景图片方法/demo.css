@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    width: 960px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: #eeeeee;
+    line-height: 100px;
+    text-align: center;
+}
+#img-box{
+    width: 960px;
+    background: url("../img/01.jpg") 0 0 no-repeat;
+    background-size: 100%;
+    height: 540px;
+    margin: 0 auto;
+    margin-top: 50px;
+   /* opacity: 0.4;*/
+}
+#content{
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.content-left{
+    width: 630px;
+    height: 300px;
+    float: left;
+    background: #ff0000;
+    display: table;
+}
+.content-right{
+    width: 300px;
+    height: 300px;
+    float: right;
+    background: green;
+    display: table;
+}
+#content div p{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+@media screen and (max-width: 960px){
+    h2{
+        width: 100%;
+    }
+    #img-box{
+        width: 100%;
+        background-image: url("../img/01_s_2x.jpg");
+        /*height: 56vw;*/
+        /*vw 表示视口宽度百分比   vh表示视口高度百分比*/
+        padding-top:56%;
+        height: 0;
+    }
+    #content{
+        width: 100%;
+    }
+    .content-left{
+        width: 66%;
+    }
+    .content-right{
+        width: 31%;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    #img-box{
+        width: 100%;
+        background-image:url("../img/01_s.jpg");
+       /* height: 56vw;*/
+         padding-top:56%;
+        height: 0;
+    }
+    #content{
+        width: 100%;
+    }
+    .content-left{
+        width: 100%;
+    }
+    .content-right{
+        width: 100%;
+    }
+}
