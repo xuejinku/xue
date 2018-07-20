@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <script>
+       /*  var aLi = document.querySelectorAll('li');
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick = function(){
+                _this = this;               //如果不定义this，则this指向poeson，
+                setTimeout(function() {
+                    console.log(_this);     //定义后this指向window
+                }, 300);
+            }
+        } */
+
+
+        //函数中this 执行时的this  箭头函数中的this 声明是的this
+        //到父作用域找 
+        /* var aLi = document.querySelectorAll('li');
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick = function(){ 
+                setTimeout(() => {
+                    console.log(this);     // this指向window
+                }, 300);
+            }
+        } */
+        
+        /* var person = {       
+            name:'zs',
+            age:10,
+            say:() => {
+                aa = () =>  {
+                    console.log(this);    //this指向window
+                }
+                aa();
+            }
+        }
+        person.say();
+ */
+
+        //箭头函数不能去写构造函数
+        
+
+        //在箭头函数不允许使用arguments
+        let aa = (...rest) => {
+            // console.log( arguments  );
+            console.log(rest)
+        }
+        aa(1,2,3,4);
+
+
+
+    </script>
+</body>
+</html>

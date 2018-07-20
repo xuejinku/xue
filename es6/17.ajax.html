@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">click获取</button>
+    <div id="div1"></div>
+    <script>
+        var oBtn = document.querySelector('#btn');
+        var oDiv1 = document.querySelector('#div1');
+        oBtn.onclick = function(){
+
+        //1.创建xmlhttpRequest 对象
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        //2.向服务器发送请求
+        //get
+        xmlhttp.open("GET","test.json?name=xx",true);
+        xmlhttp.send();  
+
+
+        //post
+        xmlhttp.open("POST","test.json",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("name=xx");
+
+        //3服务器响应
+       
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                // 操作页面 更改想要的更新
+                console.log(typeof xmlhttp.responseText);
+                var obj = JSON.parse(xmlhttp.responseText)
+                oDiv.innerHTML = obj.result;
+            }
+             
+        }
+    }
+
+   /*  readyState      存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+    
+                        0: 请求未初始化
+                        1: 服务器连接已建立
+                        2: 请求已接收
+                        3: 请求处理中
+                        4: 请求已完成，且响应已就绪
+
+    status              200: "OK"
+                        404: 未找到页面 */
+    </script>
+</body>
+</html>
