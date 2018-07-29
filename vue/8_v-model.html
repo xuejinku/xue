@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="ppt">
+            <input type="radio" value="nv" v-model="sex">女
+            <input type="radio" value="nan" v-model="sex">男
+
+            <input type="checkbox" value="zuqiu" v-model="habby">足球
+            <input type="checkbox" value="lanqiu" v-model="habby">篮球
+            <input type="checkbox" value="bangqiu" v-model="habby">棒球
+
+            <select name="" id="" v-model="school">
+                <option value="heida">黑大</option>
+                <option value="linda">林大</option>
+                <option value="weichuang">唯创</option>
+            </select>
+
+        </div>
+        <script src="vue.js"></script>
+        <script>
+        new Vue({
+            el:'#ppt',
+            data:{
+                name:'',
+                habby:[''],
+                school:'',
+            }
+        })
+
+        </script>
+</body>
+</html>

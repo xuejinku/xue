@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .aa{
+        background:#f0f;
+    }
+    .bb{
+        background: #0ff;
+    }
+    
+    
+    </style>
+</head>
+<body>
+        <div class="xue">
+            <h2 :id="msg">{{msg}}</h2>
+            <h2 id="msg"></h2>
+            <p :class="{aa:isA,bb:isB}" @click="change()">jinku</p>
+            
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            new Vue({
+                el:'.xue',
+                data:{
+                    msg:'111',
+                    isA:false,
+                    isB:true
+                },
+                methodes:{
+                    change(){
+                        this.isA = !isA;
+                        this.isB = !isB;    
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

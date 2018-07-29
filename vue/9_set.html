@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="xue">
+        <button @click="change()">click</button>
+        <ul>
+            <li v-for="val in list">{{val}}</li>
+            <h2 v-for="(val,key) in obj">{{key}}---{{val}}</h2>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+    let vm =  new Vue({
+        el:'#xue',
+        data:{
+            list:[1,2,3,4,5],
+            obj:{
+                name:'ku'
+            }
+        },
+        methods:{
+            change(){
+                //this.list[1] = 7; //在vue中  在数组中用索引来替换值  用中括号的形式替换不可以
+                //this.list.splice(1,1,8); //这个方法可以    但是当属性改变时更新不到页面
+                Vue.set(this.list,1,8); // 第一个值代表修改对象 第二个值代表数组的索引 第三个是要修改的值
+
+                this.obj.name = 'jin';
+                //Vue.set(this.obj,'age',50);
+                //对象添加属性不可以
+                //数组通过索引修改值也不可以
+            }
+            
+
+
+        }
+    })
+    
+    
+    
+    </script>
+</body>
+</html>

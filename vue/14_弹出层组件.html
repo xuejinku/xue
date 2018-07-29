@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #dialog{
+                width: 400px;
+                height: 400px;
+                background: #cccccc;
+                border:1px solid #000;
+            }
+            .title{
+                height: 30px;
+                line-height: 30px;
+                border-bottom: 1px solid #000;
+            }
+            .close{
+                float:right;
+            }
+    
+        </style>
+</head>
+<body>
+        <div id="xjk">
+                <button @click="showRegister = true;showLogin = false;">注册</button>
+                <button @click="showLogin = true; showRegister = false;">登录</button>
+                <my-Dialog title="注册" v-if="showRegister">
+                    用户名: <input type="text"><br>
+                    密  码：<input type="text"><br>
+                    确认密码：<input type="text"><br>
+                    <button>确定</button>
+                </my-Dialog>
+                <my-Dialog title="登陆" v-if="showLogin">
+                        用户名: <input type="text"><br>
+                        密  码：<input type="text"><br>
+                        <button>确定</button>
+                </my-Dialog>
+        </div>
+    
+        <script src="vue.js"></script>
+        <script type='text/x-template' id="temp">
+        <div id="dialog">
+                <div class="title">
+                    {{title}}
+                    <span class="close">X</span>
+                </div>
+                <div class="content">
+                    <slot></slot>
+                </div>
+            </div></script>
+        <script>
+            
+            let vm = new Vue({
+                el:'#xjk',
+                data:{
+                    showLogin:false,
+                    showRegister:false
+                },
+                components:{
+                    myDialog:{
+                        template:'#temp',
+                        props:['title']
+                    }
+                }
+            })
+        </script>
+</body>
+</html>
